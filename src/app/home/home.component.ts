@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApixuService } from '../apixu.service';
+import { ImageService } from '../image.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +7,38 @@ import { ApixuService } from '../apixu.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  imgUrl: string = 'https://picsum.photos/200/300/?random';
 
-  constructor(private apixuService: ApixuService) { }
+  imageToShow: any;
+  isImageLoading: boolean;
 
-  ngOnInit() {
-    this.apixuService.getPhoto
-  }
+  constructor(private imageService: ImageService) {}
 
-}
+//rendering for image
+    createImageFromBlob(image: Blob) {
+      let reader = new FileReader();
+      reader.addEventListener("load", () => {
+         this.imageToShow = reader.result;
+      }, false);
+   
+      if (image) {
+         reader.readAsDataURL(image);
+      }
+     }
+   
+     getImageFromService() {
+         this.isImageLoading = true;
+         this.imageService.getImage(this.imgUrl).subscribe(data => {
+           this.createImageFromBlob(data);
+           this.isImageLoading = false;
+         }, error => {
+           this.isImageLoading = false;
+           console.log(error);
+         });
+     }
+     ngOnInit(){
+     }
+   }
+   
+
+

@@ -5,7 +5,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
+// Routes for  NavBar
 const routes: Routes = [
   {path: "", component: HomeComponent },
 

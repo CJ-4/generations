@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -26,10 +27,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('generations');
   });
 
-  it('should render title', () => {
+  // test all caps
+  it("should render title 'GENERATIONS' and check for all caps", () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('generations app is running!');
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('GENERATIONS');
   });
 });

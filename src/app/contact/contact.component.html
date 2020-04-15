@@ -1,6 +1,7 @@
-<title>Contact Us</title>
+<h1>Contact Us</h1>
   
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+   
  <!--input name on form-->     
     <div class="form-group">
         <label for="name">Name</label>
@@ -9,7 +10,7 @@
             id="name" 
             type="text" 
             class="form-control">
-        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+        <div *ngIf="f.name.invalid && (f.name.touched ||f.name.dirty)" class="alert alert-danger">
             <div *ngIf="f.name.errors.required">Name is required.</div>
         </div>
     </div>
