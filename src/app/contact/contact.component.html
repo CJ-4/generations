@@ -1,0 +1,44 @@
+<title>Contact Us</title>
+  
+<form [formGroup]="form" (ngSubmit)="submit()">
+ <!--input name on form-->     
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+            formControlName="name"
+            id="name" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+            <div *ngIf="f.name.errors.required">Name is required.</div>
+        </div>
+    </div>
+ <!--input email on form-->  
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+            formControlName="email"
+            id="email" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+        </div>
+    </div>
+ <!--input body on from-->  
+    <div class="form-group">
+        <label for="body">Body</label>
+        <textarea 
+            formControlName="body"
+            id="body" 
+            type="text" 
+            class="form-control">
+        </textarea>
+        <div *ngIf="f.body.touched && f.body.invalid" class="alert alert-danger">
+            <div *ngIf="f.body.errors.required">Body is required.</div>
+        </div>
+    </div>
+  
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>

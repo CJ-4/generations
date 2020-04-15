@@ -1,0 +1,17 @@
+$base-color: #9105b4;
+$color: black;
+
+.navbar-default {
+    background-color: $base-color !important;
+}
+
+.nav-link {
+    color: $color !important;
+    font-size: 18px;
+}
+
+.navbar-brand {
+    color: $color !important;
+    font-size: 36px;
+    font-family:"Copperplate" ;
+}
