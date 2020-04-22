@@ -20,17 +20,11 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
+// testing title
   it(`should have as title 'generations'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('generations');
   });
 
-  // test all caps
-  it("should render title 'GENERATIONS' and check for all caps", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('GENERATIONS');
-  });
 });

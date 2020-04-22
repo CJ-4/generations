@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+
+import { Photos } from './photos';
+import { PHOTOS } from './mock-photos';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
-
-  constructor(private httpClient:HttpClient) { }
-    
-
-  getImage(imageUrl: string): Observable<Blob> {
-    return this.httpClient.get(imageUrl, { responseType: 'blob' });
-  }
   
+  
+  getImages(): Observable<Photos[]> {
+    return of(PHOTOS)
+  }
 }

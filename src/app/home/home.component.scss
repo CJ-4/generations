@@ -1,5 +1,17 @@
-p{
+.container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
     color:#9105b4;
-    font-size: 48px;
-    align-content: center;
-}
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ div{
+     background-color: black;
+ }

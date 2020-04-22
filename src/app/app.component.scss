@@ -1,5 +1,5 @@
-$base-color: #9105b4;
-$color: black;
+$base-color: black;
+$color: #9105b4;
 
 .navbar-default {
     background-color: $base-color !important;
@@ -13,5 +13,6 @@ $color: black;
 .navbar-brand {
     color: $color !important;
     font-size: 36px;
-    font-family:"Copperplate" ;
+    color: #9105b4;
+    font-family: "Coppertone";
 }

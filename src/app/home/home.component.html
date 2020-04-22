@@ -1,18 +1,13 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="text-center">
-            <img [src]="imageToShow"
-            alt="Generations"
-            *ngIf="!isImageLoading; else noImageFound">
-<ng-template #noImageFound>
-     <img src="fallbackImage.png" alt="Fallbackimage">
-</ng-template>
+  <img src="{{pics[0].url}}" alt="Generations" style="width:80%;">
+  <div class="text-block">
+    <h4>Photography is the beauty of life captured.</h4>
+    <p>-Tara Chisholm-</p>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-          <div class="text-center">
-              <p>Photography that captures not just a good photo, but also a piece of the subjects soul!</p>
+</div>
+ 
+
 
   
+
+ 
